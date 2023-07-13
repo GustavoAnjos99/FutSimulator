@@ -9,11 +9,20 @@
     <link rel="stylesheet" href="estilo.css">
     <link rel="icon" href="ICON-FUT-LOGO.png"> 
 </head>
+<header class="container">
+  <img src="FUT-LOGO.png" class="logo">
+  <h2 size="50%" class="titulo">FUT SIMULATOR</h2>
+  <nav>
+  <ul class="nav justify-content-end navPatchNotes">
+    <li class="nav-item">
+      <a class="nav-link active" href="patchNotes.html" target="_blank"><strong>Patch Notes 1.2</strong></a>
+    </li>
+  </ul>
+  </nav>
+</header>
 <body class="--bs-secondary-color">
     <main class="container main  mh-100 align-middle mainPhone">
-        <h2 size="50%">FUT SIMULATOR <i><a href="patchNotes.html" target="_blank">1.1</a></i></h2>
-        <img src="FUT-LOGO.png" class="logo">
-        <hr>
+      <br>
     <form>
     <div class="configStyle">
         <label>TURNOS:</label>
@@ -23,6 +32,12 @@
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
+        </select>
+
+        <label>&ensp;&ensp; TIMES:</label>
+        <select id="quantidadeTimesSelect" onchange="atualizarTorneio()">
+          <option value="3">3</option>
+          <option value="4">4</option>
         </select>
         <br>
         
@@ -34,7 +49,12 @@
         
         <label>Nome do Time 3:</label>
         <input type="text" id="nomeTime3Input"><br>
-        
+
+        <section class="time4" id="nomeTime4Input2">
+        <label>Nome do Time 4:</label>
+        <input type="text" id="nomeTime4Input"><br>
+        </section>
+
         <button type="button" onclick="iniciarTorneio(); exibirTable()">CONFIRMAR</button>
     </div>
     </form>
@@ -58,14 +78,18 @@
       <td id="nomeTime3"></td>
       <td id="pontosTime3"></td>
     </tr>
+    <tr>
+      <td id="nomeTime4"></td>
+      <td id="pontosTime4"></td>
+    </tr>
   </table>
 </div>
   <div id="rodadasContainer" class="rodadasStyle"></div>
     </main>
     <br>
     <footer class="container">
-      <p text-align="center">Fut Simulator Versão <a href="patchNotes.html" target="_blank">1.1.</a><br>
-        Clique no número da versão para saber quais são as notas de atulização.</p>
+      <p text-align="center"><strong>Simulator Versão <a href="patchNotes.html" target="_blank">1.2</a><br>
+        Simulador de campeonato de pontos corridos.</strong></p>
         <br>
     </footer>
 

@@ -13,7 +13,7 @@ body {
     padding-bottom: 10px;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.185);
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     position: relative;
     border: 2px solid black;
 }
@@ -88,6 +88,14 @@ select {
 
 .logo {
     position: absolute;
+    width: 72px;
+    height: 70px;
+    left: 4px;
+    top: 2px;
+}
+
+.logoPN {
+    position: absolute;
     width: 100px;
     height: 98px;
     right: 2px;
@@ -129,6 +137,11 @@ a:visited {
     text-align: right;
 }
 
+.time4 {
+    display: none;
+}
+
+
 footer {
     background-color: white;
     border: 2px solid black;
@@ -136,6 +149,31 @@ footer {
     text-align: center;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.185);
 }
+
+header {
+    position: relative;
+    height: 80px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 0 0 10px 10px ;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.185);
+}
+
+.titulo {
+    margin-left: 76px;
+    margin-top: 15px;
+    font-family: square;
+}
+
+.navPatchNotes {
+    margin-top: 15px;
+    position:absolute;
+    right: 4px;
+    top: 4px;
+    text-decoration: underline;
+}
+
+
 
 @media (max-width: 815px) {
     .mainPhone{
@@ -210,3 +248,8 @@ footer {
     }
 
 }
+
+@font-face {
+    font-family: square;
+    src: url(fontes/ST-SimpleSquare.otf);
+ }
