@@ -15,7 +15,7 @@ body {
     margin-top: 20px;
     margin-bottom: 0px;
     position: relative;
-    border: 2px solid black;
+    
 }
 
 .inputtext{
@@ -38,6 +38,15 @@ body {
 
 .configStyle {
     display: inline-block;
+
+}
+
+.configStyle h2, h3 {
+    font-family: square;
+}   
+
+.labelTT {
+    border: 1px solid black;
 }
 
 table {
@@ -61,14 +70,14 @@ text-align: left;
 }
 
 button:hover {
-    box-shadow: 0 0 1px 2px black;
+    box-shadow: 0 0 1px 2px rgb(126, 126, 126);
     background-color: black;
     border: 2x solid white;
     color: white;
 }
 
 input {
-    border-radius: 6px;
+    border-radius: 6px ;
     border: 1px solid black;
 }
 
@@ -80,6 +89,7 @@ input::selection{
 
 button {
     border-radius: 6px;
+    border: 1px solid black;
 }
 
 select {
@@ -105,6 +115,14 @@ select {
 .rodadasStyle input {
     width: 77.42px;
     height: 28px;
+}
+
+.rodadasStyle h3 {
+    margin-top: 70px;
+}
+
+.rodadasStyle h3:first-child {
+    margin-top: 0;
 }
 
 .dinamicTable {
@@ -144,7 +162,6 @@ a:visited {
 
 footer {
     background-color: white;
-    border: 2px solid black;
     border-radius: 10px 10px 0 0;
     text-align: center;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.185);
@@ -154,7 +171,7 @@ header {
     position: relative;
     height: 80px;
     background-color: white;
-    border: 2px solid black;
+    border-top: 2px solid white;
     border-radius: 0 0 10px 10px ;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.185);
 }
@@ -212,18 +229,61 @@ header {
 }
 
 @media (max-width: 508px) {
-    .rodadasStyle input {
-        width: 70.42px;
-        height: 28px;
+    .rodadasStyle{
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .rodadasStyle p {
+        width: 70vh;
+        margin-left: 0;
     }
     
+    .rodadasStyle h3 {
+        width: 70%;
+        margin-left: 15%;
+    }
+
     main {
         width: 100%;
     }
+
+    .configStyle {
+        display: flex;
+        flex-direction:column;
+        align-content: center;
+        text-align: center;
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .dinamicTable {
+        display: flex;
+        flex-direction:column;
+        align-content: center;
+        text-align: center;
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 20px;
+        display: none;
+    }
     
+    input {
+        width: 100%;
+    }
+
+    .configStyle button {
+        margin-top: 30px;
+        width: 70%;
+        margin-left: 15%;
+    }
+    
+    .navPatchNotes {
+        display: none;
+    }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 415px) {
     .logo {
     width: 50px;
     height: 47px;
@@ -236,15 +296,51 @@ header {
    .container {
     padding: 10px;
    }
-   main {
-    border: 1px solid black;
-   }
+
+
+   .titulo {
+    margin-left: 76px;
+    margin-top: 0px;
+    font-family: square;
+    
+}
+
+.titulo h2 {
+    size: small;
+}
+.navPatchNotes {
+    margin-top: 20px;
+    position:absolute;
+    left: 4px;
+    bottom: 4px;
+    text-decoration: underline;
+}
+
+.logo {
+    top: 15px;
+}
 
 }
 
 @media (max-width: 280px) {
-    h2, h4 {
-        font-size:medium;
+    h2, h4, h3 {
+        font-size:small;
+
+    }
+
+    .rodadasStyle button {
+
+        align-items: center;
+    }
+    .rodadasStyle p {
+        width:100%;
+        margin-left: 0;
+    }
+
+    .rodadasStyle button {
+        width: 50%;
+        margin-left: 20%;
+        margin-top: 10px;
     }
 
 }

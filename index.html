@@ -12,10 +12,10 @@
 <header class="container">
   <img src="FUT-LOGO.png" class="logo">
   <h2 size="50%" class="titulo">FUT SIMULATOR</h2>
-  <nav>
+  <nav class="collapse.navbar-collapse">
   <ul class="nav justify-content-end navPatchNotes">
     <li class="nav-item">
-      <a class="nav-link active" href="patchNotes.html" target="_blank"><strong>Patch Notes 1.2</strong></a>
+      <a class="nav-link active" href="patchNotes.html" target="_blank"><strong>Patch Notes 1.3</strong></a>
     </li>
   </ul>
   </nav>
@@ -24,23 +24,27 @@
     <main class="container main  mh-100 align-middle mainPhone">
       <br>
     <form>
+      
     <div class="configStyle">
-        <label>TURNOS:</label>
-        <select id="turnosSelect">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+      <h3>Configurações</h3>
+        <label for="turnosSelect">TURNOS:</label>
+          <select id="turnosSelect" >
+            <option value="1">1</option>
+            <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
         </select>
-
-        <label>&ensp;&ensp; TIMES:</label>
-        <select id="quantidadeTimesSelect" onchange="atualizarTorneio()">
+      
+        <label for="quantidadeTimesSelect">&ensp;TIMES:&ensp;</label>
+          <select id="quantidadeTimesSelect" class="border border-dark custom-selects" onchange="atualizarTorneio()">
           <option value="3">3</option>
           <option value="4">4</option>
         </select>
         <br>
-        
+      
+    
+
         <label>Nome do Time 1:</label>
         <input type="text" id="nomeTime1Input"><br>
         
@@ -59,9 +63,10 @@
     </div>
     </form>
    <br>
+   
    <div id="idtable" class="sticky-top dinamicTable">
     <h3>Tabela</h3>
-  <table class="configStyle">
+  <table >
     <tr>
       <th>Time </th>
       <th>PTS  </th>
@@ -85,10 +90,11 @@
   </table>
 </div>
   <div id="rodadasContainer" class="rodadasStyle"></div>
+  
     </main>
     <br>
-    <footer class="container">
-      <p text-align="center"><strong>Simulator Versão <a href="patchNotes.html" target="_blank">1.2</a><br>
+    <footer class="container border-bottom-0">
+      <p text-align="center"><strong>Simulator Versão <a href="patchNotes.html" target="_blank">1.3</a><br>
         Simulador de campeonato de pontos corridos.</strong></p>
         <br>
     </footer>
