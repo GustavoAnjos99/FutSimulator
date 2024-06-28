@@ -126,3 +126,42 @@ input[type=number] {
 .headerTabela {
     border-bottom: 4px solid whitesmoke ;
 }
+
+main {
+    display: grid; 
+    grid-template-columns: auto auto; 
+    justify-content: space-around; 
+    height: 100vh; 
+    position: relative;
+}
+
+@media (max-width: 1000px){
+    main {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    #tabela_pai {
+        max-width: 100%;
+    }
+
+    #form_config {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #form_config label, input {
+        width: 80% !important;
+    }
+    #qtd_times {
+        width: 80% !important;
+    }
+    #qtd_turnos {
+        width: 80% !important;
+    }
+    #btn_inicio {
+        width: 80% !important;
+        margin: 10px auto;
+        margin-top: 50px 
+    }
+}
