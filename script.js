@@ -22,6 +22,7 @@ qtd_times.addEventListener('change', () => {
     label.innerText = `Nome do time ${i + 1}: `
     label.for = `nome_time_${i + 1}`
     label.name = `nome_time_${i + 1}`
+    label.style.marginTop = '30px'
 
     input.id = `nome_time_${i + 1}`
     input.name = `nome_time_${i + 1}`
@@ -55,9 +56,15 @@ btn_inicio.addEventListener('click', () => {
 })
 
 function criarTabela() {
-  tabelapai.style.minWidth = '500px'
+  let size = screen.width;
+  if(size < 1000){
+    tabelapai.style.minWidth = "auto";
+  } else {
+    tabelapai.style.minWidth = '500px'
+  }
   tabelainfo.innerText = ''
   tabelainfo.innerHTML = '<h2>Posição</h2><h2>Time</h2><h2>Pontos</h2>'
+  tabelainfo.style.borderBottom = '4px solid whitesmoke'
   tabelainfo.style.display = 'flex'
   tabelainfo.style.justifyContent = 'space-between'
 
@@ -75,15 +82,16 @@ function criarTabela() {
   }
 }
 function atualizarTabela() {
-  primeirofilho = tabela.firstChild
   while (tabela.firstChild) {
-    console.log(tabela.firstChild.value)
     tabela.removeChild(tabela.firstChild)
   }
-  tabela.appendChild(primeirofilho)
+  tabelaTitle = document.createElement('h2')
+  tabelaTitle.innerText = 'TABELA'
+  tabela.append(tabelaTitle)
+  tabela.appendChild(tabelainfo)
   tabelainfo.innerText = ''
   tabelainfo.innerHTML = '<h2>Posição</h2><h2>Time</h2><h2>Pontos</h2>'
-  tabelainfo.className += 'headerTabela'
+  tabelainfo.style.borderBottom = '4px solid whitesmoke'
   tabelainfo.style.display = 'flex'
   tabelainfo.style.justifyContent = 'space-between'
 
