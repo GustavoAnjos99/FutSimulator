@@ -7,6 +7,7 @@ const tabela = document.getElementById('tabela')
 const tabelainfo = document.getElementById('info_tabela')
 const tabelapai = document.getElementById('tabela_pai')
 times = {}
+campeonatoAtivo = false
 
 
 qtd_times.addEventListener('change', () => {
@@ -39,21 +40,52 @@ qtd_times.addEventListener('change', () => {
 const verificacaoNome = (item) => item == '';
 
 btn_inicio.addEventListener('click', () => {
+  if(campeonatoAtivo){
+    Swal.fire({
+      title: "Começar outro campeonato?",
+      text: "O campeonato ativo será perdido.",
+      icon: "warning",
+      showCancelButton: true,
+      cancelButtonColor: "#d33",
+      cancelButtonText: "Cancelar",
+      confirmButtonText: "Sim, começar campeonato!",
+      color: '#F5F5F5',
+      background: '#212121',
+      confirmButtonColor: '#424242'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        iniciarCampeonato()
+      }
+    });
+  } else {
+    iniciarCampeonato()
+  }
+})
+
+function iniciarCampeonato(){
   times = {}
   let arraynomeverificacao = []
   for (i = 0; i < qtd_times.value; i++) {
     arraynomeverificacao.push(document.getElementById(`nome_time_${i + 1}`).value)
   }
-
+  
   if (qtd_times.value == 0 || qtd_turnos.value == 0 || arraynomeverificacao.some(verificacaoNome)) {
-    alert("porra preencha")
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Todos os campos devem ser preenchidos!",
+      color: '#F5F5F5',
+      background: '#212121',
+      confirmButtonColor: '#424242'
+    });
     return
   }
   verificarTimesExistentes()
   criarTimes()
   criarTabela()
   addDivPartidas()
-})
+  campeonatoAtivo = true
+}
 
 function criarTabela() {
   let size = screen.width;
